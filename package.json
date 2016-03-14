@@ -21,34 +21,48 @@
     }
   ],
   "main": "lib/index.js",
-  "style": "css/*.css", 
+  "style": "css/*.css",
   "scripts": {
-		"test": "echo 'Error: no test specified' && exit 1",
-		"build": "mkdirp build && browserify -r ./:biojs-vis-target-disease -o build/disease.js",
-		"build-browser": "npm run build",
-		"install": "npm run build && npm run css",
-		"watch": "watchify -r ./:biojs-vis-target-disease -v -o build/disease.js",
-		"lint": "jshint -c .jshintrc lib --verbose",
-		"w": "prunner \"npm run sniper\" \"npm run watch\" \"npm run watch-css\"",
-		"sniper": "sniper .",
-		"css": "parcelify ./ -c build/bundle.css",
-		"watch-css": "parcelify -w ./ -c build/bundle.css --loglevel verbose"
+    "test": "echo 'Error: no test specified' && exit 1",
+    "build": "mkdirp build && browserify -r ./:biojs-vis-target-disease -o build/disease.js",
+    "build-browser": "npm run build",
+    "install": "npm run build && npm run css",
+    "watch": "watchify -r ./:biojs-vis-target-disease -v -o build/disease.js",
+    "lint": "jshint -c .jshintrc lib --verbose",
+    "w": "prunner \"npm run sniper\" \"npm run watch\" \"npm run watch-css\"",
+    "sniper": "sniper .",
+    "css": "parcelify ./ -c build/bundle.css",
+    "watch-css": "parcelify -w ./ -c build/bundle.css --loglevel verbose"
   },
-  "dependencies": {},
+  "dependencies": {
+    "d3": "^3.5.16"
+  },
   "devDependencies": {
-		"mkdirp": "^0.5.0",
-		"browserify": "6.x",
-		"sniper": "0.x",
-		"watchify": "^1.0.6",
-		"prunner": "1.x",
-		"parcelify": "0.x",
-		"jshint": "^2.5.10"
-  }, 
+    "mkdirp": "^0.5.0",
+    "browserify": "6.x",
+    "sniper": "0.x",
+    "watchify": "^1.0.6",
+    "prunner": "1.x",
+    "parcelify": "0.x",
+    "jshint": "^2.5.10"
+  },
   "sniper": {
-    "js": [ "/build/disease.js"],
-    "css": ["/build/bundle.css"], 
-    "snippets": ["examples"],
+    "js": [
+      "/build/disease.js"
+    ],
+    "css": [
+      "/build/bundle.css"
+    ],
+    "snippets": [
+      "examples"
+    ],
     "first": "simple"
-   }, 
-  "keywords": ["biojs","target","disease","drug discovery","biojs"]
+  },
+  "keywords": [
+    "biojs",
+    "target",
+    "disease",
+    "drug discovery",
+    "biojs"
+  ]
 }
